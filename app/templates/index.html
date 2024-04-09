@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therabot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+</head>
+<body>
+    <!-- Lightning effect overlay -->
+    <div class="lightning"></div>
+    
+    <!-- Floating bubbles for the animated background -->
+    <div class="bubble small"></div>
+    <div class="bubble medium"></div>
+    <div class="bubble large"></div>
+
+    <!-- Existing icons -->
+    <div class="icon heart left" style="top: 10%;"></div>
+    <div class="icon star right" style="top: 30%;"></div>
+    <div class="icon smiley left" style="top: 50%;"></div>
+    <div class="icon heart right" style="top: 70%;"></div>
+
+    <!-- Affirmations -->
+    <div class="affirmation top-left">You are valued.</div>
+    <div class="affirmation top-right">You can achieve great things.</div>
+    <div class="affirmation bottom-left">Your feelings matter.</div>
+    <div class="affirmation bottom-right">You are stronger than you know.</div>
+
+    <h1>Therabot</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <input id="user-input" type="text" placeholder="How can I assist you today?">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

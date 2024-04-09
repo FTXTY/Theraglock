@@ -1,0 +1,238 @@
+/* app/static/styles.css */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f9fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://i.pinimg.com/originals/1c/1e/1e/1c1e1edcec5394f25e3d0239ea5de716.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: #405d27;
+    margin-bottom: 10px;
+}
+
+#chat-container {
+    background-color: rgba(230, 230, 250, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    backdrop-filter: blur(5px);
+}
+
+#chat-history {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 2px solid #c0e8d5;
+    border-radius: 15px;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #c0e8d5;
+    border-radius: 15px;
+    background-color: #eef7f3;
+}
+
+#send-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5d8c70;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #405d27;
+}
+
+.message {
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.therapist-message {
+    background-color: #fce4ec;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* Affirmations styles */
+.affirmation {
+    position: absolute;
+    font-style: italic;
+    opacity: 0.7;
+    font-size: 1.2em;
+    color: #ffffff;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Sample positions for affirmations */
+.affirmation.top-left {
+    top: 10%;
+    left: 5%;
+}
+
+.affirmation.top-right {
+    top: 10%;
+    right: 5%;
+}
+
+.affirmation.bottom-left {
+    bottom: 10%;
+    left: 5%;
+}
+
+.affirmation.bottom-right {
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Icon styles */
+.icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Positioning icons on the left side */
+.icon.left {
+    left: 2%;
+}
+
+/* Positioning icons on the right side */
+.icon.right {
+    right: 2%;
+}
+
+/* Specific positions using nth-child for unique placement */
+.icon:nth-child(odd) {
+    top: 20%;
+}
+
+.icon:nth-child(even) {
+    bottom: 20%;
+}
+
+/* Example of setting individual icons' backgrounds */
+.icon.heart { background-image: url('https://i.pinimg.com/originals/0d/5e/8d/0d5e8d37dab34ed79623c5f693849719.gif'); }
+.icon.star { background-image: url('https://64.media.tumblr.com/69c736c051f37fdc3403d9ee7851671f/9e63bf6d404af733-33/s540x810/6bdc5bb73dc3e9f7b9e52bbc0eabbfe98caa6a05.png'); }
+.icon.smiley { background-image: url('https://media4.giphy.com/media/xUPGcLzR1mUpYMdIJi/200w.gif?cid=6c09b952p1ocygletjj1qmtve6119owbne725qr5w1zi94g6&rid=200w.gif&ct=g'); }
+
+/* Heart pop up styles */
+.heart {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 2em;
+    animation: pop 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(50%, -50%);
+}
+
+@keyframes pop {
+    0% { transform: translate(50%, -50%) scale(0.2); }
+    50% { opacity: 1; transform: translate(50%, -50%) scale(1.2); }
+    100% { opacity: 0; transform: translate(50%, -50%) scale(1); }
+}
+
+/* Animated background with floating bubbles */
+@keyframes floatBubble {
+    0% { transform: translateY(20vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatBubble 20s linear infinite;
+}
+
+.bubble::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.bubble.small { width: 2%; left: 10%; animation-delay: 0s; }
+.bubble.medium { width: 3%; left: 30%; animation-delay: -7s; }
+.bubble.large { width: 4%; left: 50%; animation-delay: -14s; }
+
+/* Lightning effect */
+@keyframes lightning {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.3; }
+}
+
+.lightning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: lightning 10s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #chat-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .icon {
+        display: none; /* Hide the icons on smaller screens */
+    }
+
+    .bubble, .lightning {
+        display: none; /* Hide the animations on smaller screens for performance */
+    }
+}
